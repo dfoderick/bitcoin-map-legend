@@ -14,7 +14,7 @@ It is based on the [mongo db query over documents](https://docs.mongodb.com/manu
 
 The structure of the bitcoin transactions are called [tna - as documented here](https://github.com/21centurymotorcompany/tna).
 
-The following links are useful to discover more query examples.
+The following links are useful to discover more query examples.  
 [Bitquery playlist](https://github.com/21centurymotorcompany/bitplaylist)  
 [More Bitsocket Examples](https://bitsocket.org/examples)  
 [More Bitdb Examples](https://docs.bitdb.network/docs/intro_v3)
@@ -60,7 +60,7 @@ Use [Raw Stream](https://github.com/21centurymotorcompany/bitplaylist/blob/maste
 | [tokenized](#tokenized)| [tokenized docs](https://github.com/tokenized/specification) |
 | [bitcoin token](#bitcointoken)| [bitcointoken docs](http://bitcointoken.com/) |
 
-TODO: add SLP and bitcoinfiles for completeness
+TODO: add SLP and bitcoinfiles (others?) for completeness.
 
 ## memo
 [Memo Protocol document](https://sv.memo.cash/protocol)
@@ -120,7 +120,7 @@ Example: Find tokenized data. This example is great because it shows how to tran
 [bitcointoken site](http://bitcointoken.com/)
 [bitcointoken docs](http://bitcointoken.com/docs.html)
 
-BitcoinToken is interesting becuase the project is working on the concept of data ownership, data that is "updatable" on the blockchain by the data owner and can be "shared" with other co-owners. 
+BitcoinToken is interesting because the project is working on the concept of data ownership, data that is "updatable" on the blockchain by the data owner and can be "shared" with other co-owners. 
 
 >*Data stored in this way comes with a very strong guaranty: only the person in possession of the private key for 0x03a70e0e5f7... can spend the output containing the data. We call that user the owner of the data. By default the user to issue the command is the owner, to designate a different owner, pass in that users public key as the second argument. Multiple public keys can be passed in to model co-ownership of data.*
 
