@@ -117,7 +117,7 @@ Example: Find tokenized data. This example is great because it shows how to tran
 }
 ```
 ## bitcointoken
-[bitcointoken site](http://bitcointoken.com/)
+[bitcointoken site](http://bitcointoken.com/)  
 [bitcointoken docs](http://bitcointoken.com/docs.html)
 
 BitcoinToken is interesting because the project is working on the concept of data ownership, data that is "updatable" on the blockchain by the data owner and can be "shared" with other co-owners. 
