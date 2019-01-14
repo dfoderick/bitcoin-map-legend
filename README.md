@@ -19,10 +19,21 @@ The following links are useful to discover more query examples.
 [More Bitsocket Examples](https://bitsocket.org/examples)  
 [More Bitdb Examples](https://docs.bitdb.network/docs/intro_v3)
 
+## Sites
+Genesis is starting point for all queries.  
+https://genesis.bitdb.network/
+
+Explorer Endpoint:  
+```https://genesis.bitdb.network/query/1FnauZ9aUH2Bex6JzdcV4eNX7oLSSEbxtN/<query>```  
+
+API Endpoint:  
+```https://genesis.bitdb.network/q/1FnauZ9aUH2Bex6JzdcV4eNX7oLSSEbxtN/<query>```  
+
 ## General queries
 A few queries not specific to any protocol can be helpful for debugging or building apps on bitcoin.
 
 Find specific transaction by txid. When you just created a transaction and you want to see how bitdb shreaded the transaction.  
+[Try it](https://genesis.bitdb.network/query/1FnauZ9aUH2Bex6JzdcV4eNX7oLSSEbxtN/ew0KICAidiI6IDMsDQogICJxIjogeyANCiAgICAgICJmaW5kIjogeyJ0eC5oIjogIjZmNzE0N2E3YTY2NTYxMzlhMWEzZmIxZTQ1YzI2NmMyNTM0Yzg4MjdmYmE5ZjBlNzFjMDdlMmI0NTI3NjI2NWYifSANCiAgICB9DQp9)
 ```
 {
   "v": 3,
@@ -32,13 +43,15 @@ Find specific transaction by txid. When you just created a transaction and you w
 }
 ```
 Find transactions going to an address. When your app needs to find out when it is being called.
-> *Important!* Bitdb address are currently cashaddr format. Make sure you are querying for cashaddr addresses.
+> *Important!* Genesis uses original bitcoin format for addresses. Make sure you are querying for the correct address format.  
+
+[Try it](https://genesis.bitdb.network/query/1FnauZ9aUH2Bex6JzdcV4eNX7oLSSEbxtN/ew0KICAidiI6IDMsDQogICJxIjogew0KICAgICJmaW5kIjogew0KICAgICAgIm91dC5lLmEiOiAiMTlmaFB3OXJoZU5UOWtUNEJjTHNOQ3laaGpvMVFSaXZkOCINCiAgICB9DQogIH0NCn0=)
 ```
 {
   "v": 3,
   "q": {
     "find": {
-      "out.e.a": "qq4kp3w3yhhvy4gm4jgeza4vus8vpxgrwc90n8rhxe"
+      "out.e.a": "19fhPw9rheNT9kT4BcLsNCyZhjo1QRivd8"
     }
   }
 }
@@ -50,6 +63,17 @@ Use [Raw Stream](https://github.com/21centurymotorcompany/bitplaylist/blob/maste
   "q": { "find": {} }
 }
 ```
+Get random transactions. Might useful for your SPV wallet to obfuscate your address monitoring in case someone is watching you.  
+[Try it](https://genesis.bitdb.network/query/1FnauZ9aUH2Bex6JzdcV4eNX7oLSSEbxtN/ew0KICAidiI6IDMsDQogICJxIjogew0KICAgICJkYiI6IFsiYyJdLA0KICAgICJhZ2dyZWdhdGUiOiBbeyAiJHNhbXBsZSI6IHsgInNpemUiOiAxMCB9IH1dDQogIH0NCn0=)
+```
+{
+  "v": 3,
+  "q": {
+    "db": ["c"],
+    "aggregate": [{ "$sample": { "size": 10 } }]
+  }
+}
+```
 
 ## Protocols
 | Protocol            | Docs           |
@@ -58,9 +82,9 @@ Use [Raw Stream](https://github.com/21centurymotorcompany/bitplaylist/blob/maste
 | [matter](#matter)      | [matter docs](https://www.mttr.app/p/0777a0e61c1de4b7a39d85c1072413f382ca45bdf0f9c217d9ee7884b0c488f7) |
 | [blockpress](#blockpress)      | [blockpress docs](https://www.blockpress.com/developers/blockpress-protocol) |
 | [tokenized](#tokenized)| [tokenized docs](https://github.com/tokenized/specification) |
-| [bitcoin token](#bitcointoken)| [bitcointoken docs](http://bitcointoken.com/) |
-
-TODO: add SLP and bitcoinfiles (others?) for completeness.
+| [bitcoin token](#bitcointoken)| [bitcointoken docs](https://github.com/simpleledger/slp-specifications/blob/master/slp-token-type-1.md) |
+| SLP | [SLP docs](http://bitcointoken.com/) |
+| bitcoinfiles| [bitcoinfiles docs](https://github.com/simpleledger/slp-specifications/blob/master/bitcoinfiles.md) |
 
 ## memo
 [Memo Protocol document](https://sv.memo.cash/protocol)
